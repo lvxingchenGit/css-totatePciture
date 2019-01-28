@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>css3动画</title>
+</head>
+<style>
+        .wrapper {
+                width: 200px;
+                height: 200px;
+                /* 3d元素 */
+                transform-style: preserve-3d;
+                /* perspective: 2000px; */
+                position: relative;
+                margin: 100px auto;
+                animation: move 8s linear infinite;
+                /* transform: rotate3d(-20deg,0,0); */
+        }
+
+        .wrapper div {
+                width: 200px;
+                height: 200px;
+                opacity: 0.8;
+                text-align: center;
+                line-height: 200px;
+                font-size: 40px;
+                color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+        }
+        .wrapper div img{
+                width:100%;
+                height:100%;
+        }
+        .wrapper .item1 {
+                background: rgb(15, 216, 223);
+                transform: rotateY(0deg) translate3d(0,0,200px);
+        }
+
+        .wrapper .item2 {
+                background: rgb(68, 202, 15);
+                transform: rotateY(60deg) translate3d(0,0,200px);
+        }
+
+        .wrapper .item3 {
+                background: rgb(219, 150, 0);
+                transform: rotateY(120deg) translate3d(0,0,200px);
+        }
+
+        .wrapper .item4 {
+                background: rgb(96, 0, 250);
+                transform: rotateY(180deg) translate3d(0,0,200px);
+        }
+
+        .wrapper .item5 {
+                background: rgb(184, 187, 0);
+                transform: rotateY(240deg) translate3d(0,0,200px);
+        }
+
+        .wrapper .item6 {
+                background: rgb(179, 0, 250);
+                transform: rotateY(300deg) translate3d(0,0,200px);
+        }
+
+        @keyframes move {
+                0% {
+                        transform:  rotateX(-20deg) rotateY(0deg);
+                }
+                100%{
+                        transform:  rotateX(-20deg) rotateY(360deg);
+                }
+        }
+        #btn{
+                position: absolute;
+                top:0px;
+                left:0px;
+        }
+</style>
+
+<body>
+        <div class="wrapper">
+                <div class="item1"><img src="img/1.png" alt=""></div>
+                <div class="item2"><img src="img/2.png" alt=""></div>
+                <div class="item3"><img src="img/3.png" alt=""></div>
+                <div class="item4"><img src="img/4.png" alt=""></div>
+                <div class="item5"><img src="img/5.png" alt=""></div>
+                <div class="item6"><img src="img/6.png" alt=""></div>
+        </div>
+
+ 
+        <!-- 
+ ~~~~~~~ ~~~~~~~~~~~~~~css3动画~~~~~~~~~~~~~~~~~~~~~~~~
+        transform-style：需要设置在父元素当中（父级不能防止子元素溢出，否则 preserve-3d;失效）
+        transform-style : flat——————子元素是2D
+        transform-style : preserve-3d;——————子元素将会是3d元素
+        prespective:600px;   景深   后边值是像素
+        perspective-origin : 默认值50% 50%；视觉效果
+        backface-visibilty:hidden;这个属性设置在子元素上边
+        
+        
+        
+        
+        
+-->
+</body>
+
+</html>
